@@ -13,3 +13,5 @@ https://mooniidev.github.io/rock-paper-scissors-game/
 https://tmcerlean.github.io/rock-paper-scissors/
 - also as the typewriter effect
 - can sound effects, at first I thought it was cool, but it's sort of cringy
+
+check to see

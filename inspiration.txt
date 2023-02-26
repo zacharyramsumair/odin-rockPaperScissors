@@ -1,0 +1,15 @@
+https://lookingcoolonavespa.github.io/rock-paper-scissors/
+= text comes up not all at once but incrementally
+= gives it some stakes
+- good font
+- likes that the results comes up on another screen at the end (especially when the game was tied 4-4, give it some weight and anxiety)
+
+https://mooniidev.github.io/rock-paper-scissors-game/
+- like how they show you what exactly the opponent played
+- says enemy instead of computer
+- they changed it to wand bow mace which i didn't like, way too confusing, I will just keep it at rock paper scissors
+- like the little text they added at the end of each round saying wht happened (gives stakes makes you care a bit)
+
+https://tmcerlean.github.io/rock-paper-scissors/
+- also as the typewriter effect
+- can sound effects, at first I thought it was cool, but it's sort of cringy

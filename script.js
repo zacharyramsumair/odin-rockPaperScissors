@@ -9,6 +9,14 @@ let paperButton = document.getElementById("paper");
 let scissorsButton = document.getElementById("scissors");
 let results = document.getElementById("results");
 
+let firstAni = document.querySelector(".first-ani")
+
+
+
+setTimeout(function(){
+    firstAni.style.display = 'none';
+}, 8000); 
+
 let playerWins = 0;
 let computerWins = 0;
 results.textContent = `You : ${playerWins} VS CPU : ${computerWins}`;

@@ -17,29 +17,80 @@ let playRound = (playerSelection, computerSelection) => {
 	playerSelection = playerSelection.toLowerCase();
 	computerSelection = computerSelection.toLowerCase();
 
-    let playerInfo;
+	let playerInfo;
 
-    for (let condition of conditions ){
-        if(condition.play === playerSelection){
-             playerInfo = condition
-            break;
-        }
-
-    }
-
-  	if (computerSelection == playerInfo.ties) {
-		console.log("Game Tied");
-		return "Game Tied";
+	for (let condition of conditions) {
+		if (condition.play === playerSelection) {
+			playerInfo = condition;
+			break;
+		}
 	}
 
-    if (computerSelection == playerInfo.loses) {
-		console.log(`You Lose! ${playerInfo.loses} beats ${playerInfo.play}`);
-		return `You Lose! ${playerInfo.loses} beats ${playerInfo.play}`;
+	if (computerSelection == playerInfo.ties) {
+		// console.log("Game Tied");
+		return "Round Tied";
 	}
 
-    if (computerSelection == playerInfo.beats) {
-		console.log(`You Win! ${playerInfo.play} beats ${playerInfo.beats}`);
-		return `You Win! ${playerInfo.play} beats ${playerInfo.beats}`;
+	if (computerSelection == playerInfo.loses) {
+		// console.log(`You Lose! ${playerInfo.loses} beats ${playerInfo.play}`);
+		return `You Lose this round! ${playerInfo.loses} beats ${playerInfo.play}`;
+	}
+
+	if (computerSelection == playerInfo.beats) {
+		// console.log(`You Win! ${playerInfo.play} beats ${playerInfo.beats}`);
+		return `You Win this round! ${playerInfo.play} beats ${playerInfo.beats}`;
 	}
 };
 
+let game = () => {
+	let playerChoice = "";
+	let wins = 0;
+	let loses = 0;
+	let ties = 0;
+
+	for (let i = 0; i < 5; i++) {
+		while (true) {
+			playerChoice = prompt(`Game of 5: Round ${i+1}   Chose : Rock / Paper / Scissors ?`);
+			playerChoice = playerChoice.trim().toLowerCase();
+			if (
+				playerChoice == "rock" ||
+				playerChoice == "paper" ||
+				playerChoice == "scissors"
+			) {
+				break;
+			} else {
+				console.log("Invalid play. Please try again");
+			}
+		}
+
+		let result = playRound(playerChoice, getComputerChoice());
+		console.log(result);
+
+		if (result.includes("You Win")) {
+			wins++;
+		}
+		if (result.includes("You Lose")) {
+			loses++;
+		}
+		if (result.includes("Round Tied")) {
+			ties++;
+		}
+	}
+
+	console.log(
+		`Final Results: Games - 5  Wins - ${wins}  Ties - ${ties}  Loses - ${loses}`
+	);
+	if (wins > loses) {
+		console.log("You Win the Game");
+	}
+
+	if (wins < loses) {
+		console.log("You Lose the Game. Computer Wins");
+	}
+
+	if (wins == loses) {
+		console.log("Game Tied");
+	}
+};
+
+game();

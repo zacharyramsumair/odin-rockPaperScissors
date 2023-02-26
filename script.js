@@ -13,7 +13,7 @@ let getComputerChoice = () => {
 
 // getComputerChoice();
 
-let game = (playerSelection, computerSelection) => {
+let playRound = (playerSelection, computerSelection) => {
 	playerSelection = playerSelection.toLowerCase();
 	computerSelection = computerSelection.toLowerCase();
 
@@ -27,9 +27,7 @@ let game = (playerSelection, computerSelection) => {
 
     }
 
-  
-
-	if (computerSelection == playerInfo.ties) {
+  	if (computerSelection == playerInfo.ties) {
 		console.log("Game Tied");
 		return "Game Tied";
 	}

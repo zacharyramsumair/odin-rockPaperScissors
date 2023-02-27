@@ -163,7 +163,7 @@ opacity: 0;
 	margin: 0;
 	outline: none;
 	padding: 2em;
-	width: 20%;
+	width: 15%;
 }
 
 hr.style-five {
@@ -190,3 +190,31 @@ hr.style-five:after {  /* Not really supposed to work, but does */
 
 	}
 }
+
+
+.round-results{
+	color: #fff;
+	display: flex;
+	/* justify-content: space-between; */
+	border: 2px solid #fff;
+	margin: 2em 15%;
+	opacity: 0;
+	animation: enterWeapons 2s cubic-bezier(0, 0, 0, 1.23) 18s forwards;
+}
+
+.enemyWeapon, .roundInfo{
+	padding: 2em;
+}
+
+.enemyWeapon{
+	border-right: 2px solid #fff;
+	text-align: center;
+	
+}
+
+
+.enemyWeapon > img{
+ width: 6em;
+ margin: 1em;
+}
+

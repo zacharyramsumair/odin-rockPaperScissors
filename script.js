@@ -25,6 +25,12 @@ let baseScreen = document.querySelector(".base");
 let ending = document.querySelector(".ending");
 let playAgain = document.querySelector(".play-again");
 
+const startConfetti = () => {
+	setTimeout(function() {
+	confetti.start();
+	}, 9500); // 1000 = 1 seconds
+	};
+
 
 // ending.style.display = "flex";
 // baseScreen.style.display = "none";
@@ -180,7 +186,8 @@ ending.style.display = "flex";
 if(playerWins == 5){
 	fifthAni.textContent = "..."
 	sixthAni.textContent = "Mankind will live on ..."
-	seventhAni.textContent = "You Won !!!"
+	seventhAni.textContent = "You Win !!!"
+	startConfetti()
 }
 
 if (computerWins == 5){
@@ -192,7 +199,11 @@ if (computerWins == 5){
 if(playerWins == 5 && computerWins ==4){
 	fifthAni.textContent = "..."
 	sixthAni.textContent = "I'm sorry to tell you this but ..."
-	seventhAni.textContent = "You Won !!!"
+	seventhAni.textContent = "You Win !!!"
+	startConfetti()
+
+
+	
 }
 
 setTimeout(function () {
@@ -222,4 +233,3 @@ playAgain.addEventListener("click", ()=>{
 	location.reload()
 })
 
-// endScreen()

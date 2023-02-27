@@ -197,6 +197,7 @@ if (computerWins == 5){
 }
 
 if(playerWins == 5 && computerWins ==4){
+
 	fifthAni.textContent = "..."
 	sixthAni.textContent = "I'm sorry to tell you this but ..."
 	seventhAni.textContent = "You Win !!!"

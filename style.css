@@ -11,8 +11,13 @@ body {
 	min-height: 100vh;
 }
 
+h1{
+	margin-top: 0.5em;
+	font-size: 3rem;
+}
+
 h2{
-	margin: 1em;
+	margin: 0.5em;
 }
 
 .instructions {
@@ -26,7 +31,7 @@ h2{
  .first-ani {
 	position: relative;
 	font-size: 2rem;
-	color: green;
+	color: #fff;
 	overflow: hidden;
 	 animation: 2s fadeOut 4.5s linear forwards;
 } 
@@ -45,7 +50,7 @@ h2{
 .second-ani{
     position: relative;
 	font-size: 2rem;
-	color: green;
+	color: #fff;
 	overflow: hidden; 
 	animation: 2s fadeOut 11s linear forwards;
     opacity: 1;
@@ -64,7 +69,7 @@ h2{
 .third-ani{
     position: relative;
 	font-size: 2rem;
-	color: green;
+	color: #fff;
 	overflow: hidden; 
 	/* animation: 2s fadeOut 21s linear forwards; */
     opacity: 1;
@@ -85,6 +90,7 @@ h2{
 .fourth-ani{
     /* position: absolute; */
     opacity: 0;
+	font-size: 1.5rem;
 
     animation: jumpIN 0.5s linear 17.2s forwards;
 }
@@ -206,6 +212,11 @@ hr.style-five:after {  /* Not really supposed to work, but does */
 	padding: 2em;
 }
 
+.roundInfo > p{
+	margin: 1em;
+	font-size: 1.3rem;
+}
+
 .enemyWeapon{
 	border-right: 2px solid #fff;
 	text-align: center;
@@ -231,7 +242,7 @@ hr.style-five:after {  /* Not really supposed to work, but does */
 .fifth-ani {
 	position: relative;
 	font-size: 6rem;
-	color: green;
+	color: #fff;
 	overflow: hidden;
 	 animation: 1s fadeOut 3.5s linear forwards;
 	 margin: 0;
@@ -251,7 +262,7 @@ hr.style-five:after {  /* Not really supposed to work, but does */
 .sixth-ani {
 	position: relative;
 	font-size: 2rem;
-	color: green;
+	color: #fff;
 	overflow: hidden;
 	margin: 0;
 
@@ -272,7 +283,7 @@ hr.style-five:after {  /* Not really supposed to work, but does */
 .seventh-ani {
 	position: relative;
 	font-size: 6rem;
-	color: green;
+	color: #fff;
 	overflow: hidden;
 	margin: 0;
 
@@ -309,7 +320,7 @@ border-radius: 10px;
 .eighth-ani {
 	position: relative;
 	font-size: 6rem;
-	color: green;
+	color: #fff;
 	overflow: hidden;
 	margin: 0;
 
@@ -328,3 +339,5 @@ border-radius: 10px;
 	background: linear-gradient(270deg, transparent 0%, #000 5%, #000 100%);
 	animation: 1s animate 11s linear forwards;
 } 
+
+

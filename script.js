@@ -10,12 +10,27 @@ let scissorsButton = document.getElementById("scissors");
 
 let firstAni = document.querySelector(".first-ani");
 let secondAni = document.querySelector(".second-ani");
+let thirdAni = document.querySelector(".third-ani");
+let fourthAni = document.querySelector(".fourth-ani");
+let fifthAni = document.querySelector(".fifth-ani");
+let sixthAni = document.querySelector(".sixth-ani");
+let seventhAni = document.querySelector(".seventh-ani");
 
 let enemyWeaponImage = document.querySelector(".enemyWeaponImage");
 let roundNumber = document.querySelector(".roundNumber");
 let score = document.querySelector(".score");
 let message = document.querySelector(".message");
 
+let baseScreen = document.querySelector(".base");
+let ending = document.querySelector(".ending");
+let playAgain = document.querySelector(".play-again");
+
+
+// ending.style.display = "flex";
+// baseScreen.style.display = "none";
+
+ending.style.display = "none";
+// baseScreen.style.display = "flex";
 setTimeout(function () {
 	firstAni.style.display = "none";
 }, 7000);
@@ -151,66 +166,43 @@ let updateResults = (summary, enemyWeapon) => {
 
 	
 
-	if (playerWins == 5) {
-		message.textContent = `Combat Area: Skrew those Robots! ${summary}`;	
-	if (computerWins == 5) {
-		message.textContent = `Combat Area: You failed us... ${summary}`;	
-	}
+	if (playerWins == 5 || computerWins == 5) {
+		// message.textContent = `Combat Area: Skrew those Robots! ${summary}`;	
+		endScreen()
 };
 }
 
-// let game = () => {
-// 	let playerChoice = "";
-// 	let wins = 0;
-// 	let loses = 0;
-// 	let ties = 0;
+let endScreen = () =>{
+baseScreen.style.display = "none";
+ending.style.display = "flex";
 
-// 	for (let i = 0; i < 5; i++) {
-// 		while (true) {
-// 			playerChoice = prompt(`Game of 5: Round ${i+1}   Chose : Rock / Paper / Scissors ?`);
-// 			playerChoice = playerChoice.trim().toLowerCase();
-// 			if (
-// 				playerChoice == "rock" ||
-// 				playerChoice == "paper" ||
-// 				playerChoice == "scissors"
-// 			) {
-// 				break;
-// 			} else {
-// 				console.log("Invalid play. Please try again");
-// 			}
-// 		}
 
-// 		let result = playRound(playerChoice, getComputerChoice());
-// 		console.log(result);
+if(playerWins == 5){
+	fifthAni.textContent = "..."
+	sixthAni.textContent = "Mankind will live on ..."
+	seventhAni.textContent = "You Won !!!"
+}
 
-// 		if (result.includes("You Win")) {
-// 			wins++;
-// 		}
-// 		if (result.includes("You Lose")) {
-// 			loses++;
-// 		}
-// 		if (result.includes("Round Tied")) {
-// 			ties++;
-// 		}
-// 	}
+if (computerWins == 5){
+	fifthAni.textContent = "..."
+	sixthAni.textContent = "We never should have trusted you ..."
+	seventhAni.textContent = "You Lose !!!"
+}
 
-// 	console.log(
-// 		`Final Results: Games - 5  Wins - ${wins}  Ties - ${ties}  Loses - ${loses}`
-// 	);
-// 	if (wins > loses) {
-// 		console.log("You Win the Game");
-// 	}
+if(playerWins == 5 && computerWins ==4){
+	fifthAni.textContent = "..."
+	sixthAni.textContent = "I'm sorry to tell you this but ..."
+	seventhAni.textContent = "You Won !!!"
+}
 
-// 	if (wins < loses) {
-// 		console.log("You Lose the Game. Computer Wins");
-// 	}
+setTimeout(function () {
+	fifthAni.style.display = "none";
+}, 4500);
+setTimeout(function () {
+	sixthAni.style.display = "none";
+}, 9000);
 
-// 	if (wins == loses) {
-// 		console.log("Game Tied");
-// 	}
-// };
-
-// game();
+}
 
 rockButton.addEventListener("click", () => {
 	playRound("rock", getComputerChoice());
@@ -223,3 +215,11 @@ paperButton.addEventListener("click", () => {
 scissorsButton.addEventListener("click", () => {
 	playRound("scissors", getComputerChoice());
 });
+
+playAgain.addEventListener("click", ()=>{
+// 	ending.style.display = "none";
+// // baseScreen.style.display = "flex";
+	location.reload()
+})
+
+// endScreen()

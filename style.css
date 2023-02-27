@@ -11,6 +11,10 @@ body {
 	min-height: 100vh;
 }
 
+h2{
+	margin: 1em;
+}
+
 .instructions {
 	display: flex;
 	/* justify-content: center; */
@@ -77,6 +81,7 @@ body {
 }
 
 
+
 .fourth-ani{
     /* position: absolute; */
     opacity: 0;
@@ -141,4 +146,47 @@ body {
 
 .game {
 	display: none;
+}
+
+
+.weapons{
+	display: flex;
+	margin: 2em 15%;
+	justify-content: space-around;
+	animation: enterWeapons 2s cubic-bezier(0, 0, 0, 1.23) 18s forwards;
+opacity: 0;
+}
+
+.weapon{
+	background-color: #000;
+	border: 3px solid #fff;
+	margin: 0;
+	outline: none;
+	padding: 2em;
+	width: 20%;
+}
+
+hr.style-five {
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 10px 1px #fff;
+	animation: enterWeapons 2s cubic-bezier(0, 0, 0, 1.23) 18s forwards;
+opacity: 0;
+margin: 4em;}
+hr.style-five:after {  /* Not really supposed to work, but does */
+    content: "\00a0";  /* Prevent margin collapse */
+}
+
+
+@keyframes enterWeapons {
+	from{
+		opacity: 0;
+		transform: translateY(4em);
+	}
+
+	to{
+		opacity: 1;
+		transform: translateY(0);
+
+	}
 }

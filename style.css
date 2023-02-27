@@ -2,6 +2,8 @@
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+    font-family: lacquer, arial, sans-serif;
+
 }
 
 body {
@@ -17,46 +19,72 @@ body {
 	color: #fff;
 }
 
-.first-ani {
+ .first-ani {
 	position: relative;
 	font-size: 2rem;
 	color: green;
 	overflow: hidden;
-	/* animation: 2s fadeOut 5s linear forwards, 1s disappear 7s linear forwards; */
-	animation: 2s fadeOut 5s linear forwards;
-}
+	 animation: 2s fadeOut 4.5s linear forwards;
+} 
 
 .first-ani:before {
 	content: "";
 	position: absolute;
-	right: 20%;
+	right: -20%;
 	width: 120%;
 	height: 100%;
 	background: linear-gradient(270deg, transparent 0%, #000 5%, #000 100%);
-	animation: animate 3s linear forwards, 2s fadeOut 5s linear forwards;
-	/* animation: animate 3s linear forwards,  1s disappear 7s linear forwards; */
-}
+	animation: 3s animate 0.5s linear forwards;
+} 
 
 
-/* .second-ani{
+.second-ani{
     position: relative;
 	font-size: 2rem;
 	color: green;
-	overflow: hidden; */
-	/* animation: 2s fadeOut 5s linear forwards, 1s disappear 7s linear forwards; */
-	/* animation: 2s fadeOut 5s linear forwards;
-} */
+	overflow: hidden; 
+	animation: 2s fadeOut 11s linear forwards;
+    opacity: 1;
+} 
 
-/* .second-ani:before {
+ .second-ani:before { 
 	content: "";
 	position: absolute;
-	right: 20%;
+	right: -20%;
 	width: 120%;
 	height: 100%;
 	background: linear-gradient(270deg, transparent 0%, #000 5%, #000 100%);
-	animation: 3s animate 8s linear forwards, 2s fadeOut 13s linear forwards; */
-	/* animation: animate 3s linear forwards,  1s disappear 7s linear forwards; */
-/* } */
+	animation: 3s animate 7.5s linear forwards; 
+}
+
+.third-ani{
+    position: relative;
+	font-size: 2rem;
+	color: green;
+	overflow: hidden; 
+	/* animation: 2s fadeOut 21s linear forwards; */
+    opacity: 1;
+} 
+
+ .third-ani:before { 
+	content: "";
+	position: absolute;
+	right: -20%;
+	width: 120%;
+	height: 100%;
+	background: linear-gradient(270deg, transparent 0%, #000 5%, #000 100%);
+	animation: 3s animate 14s linear forwards; 
+}
+
+
+.fourth-ani{
+    /* position: absolute; */
+    opacity: 0;
+
+    animation: jumpIN 0.5s linear 17.2s forwards;
+}
+
+
 
 @keyframes animate {
 	0% {
@@ -72,6 +100,23 @@ body {
 	}
 }
 
+
+@keyframes jumpIN {
+    0%{
+        opacity: 0;
+        transform: translate(-70%, -75%);    
+    }
+
+
+100%{
+    opacity: 1;
+    transform: translate(0%, -0%);   
+}
+
+}
+
+
+
 @keyframes fadeOut {
 	0% {
 		opacity: 1;
@@ -83,6 +128,7 @@ body {
 
 	}
 }
+
 
 /* @keyframes disappear {
 	0% {

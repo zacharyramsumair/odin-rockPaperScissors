@@ -10,12 +10,16 @@ let scissorsButton = document.getElementById("scissors");
 let results = document.getElementById("results");
 
 let firstAni = document.querySelector(".first-ani")
+let secondAni = document.querySelector(".second-ani")
 
 
 
 setTimeout(function(){
     firstAni.style.display = 'none';
-}, 8000); 
+}, 7000); 
+setTimeout(function(){
+    secondAni.style.display = 'none';
+}, 13010); 
 
 let playerWins = 0;
 let computerWins = 0;

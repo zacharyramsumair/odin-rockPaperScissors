@@ -169,7 +169,8 @@ opacity: 0;
 	margin: 0;
 	outline: none;
 	padding: 2em;
-	width: 15%;
+	/* width: 15%; */
+	width: 10em;
 }
 
 hr.style-five {
@@ -232,7 +233,7 @@ hr.style-five:after {  /* Not really supposed to work, but does */
 
 .ending{
 	display: flex;
-	/* text-align: center; */
+	text-align: center;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
@@ -341,3 +342,34 @@ border-radius: 10px;
 } 
 
 
+@media screen and (max-width: 800px) {
+	/* body {
+	  background-color: lightgreen;
+	} */
+
+
+	.instructions{
+		text-align: center;
+	}
+
+
+	.weapons{
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.weapon{
+		/* width: 30%; */
+		margin: 0.5em;
+
+	}
+
+	.round-results{
+		flex-direction: column;
+	}
+
+	.enemyWeapon{
+		border: none;
+		border-bottom: 2px solid #fff;;
+	}
+  }

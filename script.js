@@ -26,11 +26,16 @@ let ending = document.querySelector(".ending");
 let playAgain = document.querySelector(".play-again");
 
 const startConfetti = () => {
-	setTimeout(function() {
-	confetti.start();
+	setTimeout(function () {
+		confetti.start();
 	}, 9500); // 1000 = 1 seconds
-	};
+};
 
+const stopConfetti = () => {
+	setTimeout(function () {
+		confetti.stop();
+	}, 5000) / 15000;
+};
 
 // ending.style.display = "flex";
 // baseScreen.style.display = "none";
@@ -113,108 +118,93 @@ let updateResults = (summary, enemyWeapon) => {
 	message.textContent = `Combat Area: ${summary}`;
 	enemyWeaponImage.src = `./images/${enemyWeapon}.png`;
 
-	if(summary.includes("You Win")){
+	if (summary.includes("You Win")) {
 		switch (playerWins) {
 			case 1:
 				message.textContent = `Combat Area: Let's go! Points on the board. ${summary}`;
-	
+
 				break;
 			case 2:
 				message.textContent = `Combat Area: ${summary} You're pretty good at this.`;
-	
+
 				break;
 			case 3:
 				message.textContent = `Combat Area: Has mankind found it's saviour?  ${summary}`;
-	
+
 				break;
 			case 4:
 				message.textContent = `Combat Area: One more and you're a hero! ${summary}`;
-	
+
 				break;
 			default:
 				message.textContent = `Combat Area: ${summary}`;
 		}
-	
 	}
 
-
-	if(summary.includes("You Lose")){
+	if (summary.includes("You Lose")) {
 		switch (computerWins) {
 			case 1:
 				message.textContent = `Combat Area: Oh No... ${summary}`;
-	
+
 				break;
 			case 2:
 				message.textContent = `Combat Area: ${summary} Give it another shot.`;
-	
+
 				break;
 			case 3:
 				message.textContent = `Combat Area: ${summary} It's ok. You got this.`;
-	
+
 				break;
 			case 4:
 				message.textContent = `Combat Area: ${summary} Don't let us down!`;
-	
+
 				break;
 			default:
 				message.textContent = `Combat Area: ${summary}`;
 		}
-	
 	}
 
-
-	if(playerWins == 4 && computerWins==4){
+	if (playerWins == 4 && computerWins == 4) {
 		message.textContent = `Combat Area: Match Point! It all comes down to this! Good luck. ${summary} `;
-
 	}
-
-	
-
-	
 
 	if (playerWins == 5 || computerWins == 5) {
-		// message.textContent = `Combat Area: Skrew those Robots! ${summary}`;	
-		endScreen()
+		// message.textContent = `Combat Area: Skrew those Robots! ${summary}`;
+		endScreen();
+	}
 };
-}
 
-let endScreen = () =>{
-baseScreen.style.display = "none";
-ending.style.display = "flex";
+let endScreen = () => {
+	baseScreen.style.display = "none";
+	ending.style.display = "flex";
 
+	if (playerWins == 5) {
+		fifthAni.textContent = "...";
+		sixthAni.textContent = "Mankind will live on ...";
+		seventhAni.textContent = "You Win !!!";
+		startConfetti();
+	}
 
-if(playerWins == 5){
-	fifthAni.textContent = "..."
-	sixthAni.textContent = "Mankind will live on ..."
-	seventhAni.textContent = "You Win !!!"
-	startConfetti()
-}
+	if (computerWins == 5) {
+		fifthAni.textContent = "...";
+		sixthAni.textContent = "We never should have trusted you ...";
+		seventhAni.textContent = "You Lose !!!";
+	}
 
-if (computerWins == 5){
-	fifthAni.textContent = "..."
-	sixthAni.textContent = "We never should have trusted you ..."
-	seventhAni.textContent = "You Lose !!!"
-}
+	if (playerWins == 5 && computerWins == 4) {
+		fifthAni.textContent = "...";
+		sixthAni.textContent = "I'm sorry to tell you this but ...";
+		seventhAni.textContent = "You Win !!!";
+		startConfetti();
+	}
 
-if(playerWins == 5 && computerWins ==4){
-
-	fifthAni.textContent = "..."
-	sixthAni.textContent = "I'm sorry to tell you this but ..."
-	seventhAni.textContent = "You Win !!!"
-	startConfetti()
-
-
-	
-}
-
-setTimeout(function () {
-	fifthAni.style.display = "none";
-}, 4500);
-setTimeout(function () {
-	sixthAni.style.display = "none";
-}, 9000);
-
-}
+	setTimeout(function () {
+		fifthAni.style.display = "none";
+	}, 4500);
+	setTimeout(function () {
+		sixthAni.style.display = "none";
+	}, 9000);
+};
 
 rockButton.addEventListener("click", () => {
 	playRound("rock", getComputerChoice());
@@ -228,9 +218,10 @@ scissorsButton.addEventListener("click", () => {
 	playRound("scissors", getComputerChoice());
 });
 
-playAgain.addEventListener("click", ()=>{
-// 	ending.style.display = "none";
-// // baseScreen.style.display = "flex";
-	location.reload()
-})
+playAgain.addEventListener("click", () => {
+	// 	ending.style.display = "none";
+	// // baseScreen.style.display = "flex";
+	location.reload();
+});
+
 

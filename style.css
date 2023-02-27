@@ -199,7 +199,7 @@ hr.style-five:after {  /* Not really supposed to work, but does */
 	border: 2px solid #fff;
 	margin: 2em 15%;
 	opacity: 0;
-	animation: enterWeapons 2s cubic-bezier(0, 0, 0, 1.23) 18s forwards;
+	animation: enterWeapons 2s cubic-bezier(0, 0, 0, 1.23) 1s forwards;
 }
 
 .enemyWeapon, .roundInfo{

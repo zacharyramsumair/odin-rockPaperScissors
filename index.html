@@ -1,64 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rock Paper Scissors</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap"
+			rel="stylesheet"
+		/>
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<main>
+			<section class="instructions">
+				<h1>Man vs AI</h1>
+				<h2 class="first-ani">
+					AI is threatening to take over the world...
+				</h2>
+				<h2 class="second-ani">
+					Unless you beat them in a game of Rock Paper Scissors(first to 5)
+				</h2>
+				<h2 class="third-ani">
+					Do you have what it takes to save Mankind?
+				</h2>
+				<h2 class="fourth-ani">Chose your weapon</h2>
+			</section>
 
-    <section class="instructions">
-        <h1>Man vs AI</h1>
-        <h2 class="first-ani">
-            AI is threatening to take over the world...
-        </h2>
-        <h2 class="second-ani">Unless you beat them in a game of Rock Paper Scissors(first to 5)</h2>
-        <h2 class="third-ani">Do you have what it takes to save Mankind?</h2>
-        <h2 class="fourth-ani">Chose your weapon</h2>
-    </section>
+			<section class="weapons">
+				<img id="rock" class="weapon" src="./images/rock.png" alt="" />
+				<img
+					id="scissors"
+					class="weapon"
+					src="./images/scissors.png"
+					alt=""
+				/>
+				<img id="paper" class="weapon" src="./images/paper.png" alt="" />
+			</section>
 
-    <section class="weapons">
-        <img id="rock" class="weapon" src="./images/rock.png" alt="">
-        <img id="scissors" class="weapon" src="./images/scissors.png" alt="">
-        <img id="paper" class="weapon" src="./images/paper.png" alt="">
-    </section>
+			<hr class="style-five" />
 
- 
-        <hr class="style-five">
+			<section class="round-results">
+				<div class="enemyWeapon">
+					<h3>Enemy Weapon</h3>
+					<img
+						class="enemyWeaponImage"
+						src="./images/human-skull.png"
+						alt=""
+					/>
+					<!-- <img src="./images/human-skull.png" alt=""> -->
+				</div>
+				<div class="roundInfo">
+					<p class="roundNumber">Round: 0</p>
 
-    <section class="round-results">
-        <div class="enemyWeapon">
-            <h3>Enemy Weapon</h3>
-            <img src="./images/human-skull.png" alt="">
-            <!-- <img src="./images/human-skull.png" alt=""> -->
-        </div>
-        <div class="roundInfo">
-            
-        <p>Round: 0</p>
+					<p class="score">Your Lives: 5 ︱ Enemy's Lives: 5</p>
 
-        <p>Your Lives: 5 ︱ Enemy's Lives: 5</p>
+					<p class="message">Combat Area: Empty</p>
+				</div>
+			</section>
+		</main>
 
-        <p>Combat Area: Empty</p>        
-        </div>
-    </section>
-
-
-    <!-- <button id="rock"><img src="./images/scissors.png" alt=""></button> -->
-
-
-    
-        <div id="results">
-    </section>
-   
-
-    </div>
-    
-    <script src="./script.js"></script>
-</body>
+		<script src="./script.js"></script>
+	</body>
 </html>
